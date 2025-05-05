@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps API Test</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Maps API Test</h1>
+        <p>This page tests if the Google Maps API is working correctly.</p>
+
+        <div id="map"></div>
+
+        <div style="margin-top: 20px;">
+            <h2>Test Results:</h2>
+            <ul id="test-results">
+                <li>Loading map...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Test function to be called when Google Maps API loads
+        function initMap() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<li>Google Maps API loaded successfully!</li>';
+
+            try {
+                // Default coordinates for Kathmandu, Nepal
+                const kathmandu = { lat: 27.7172, lng: 85.3240 };
+
+                // Create a map centered on Kathmandu
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    center: kathmandu,
+                    zoom: 13
+                });
+
+                // Add a marker for Kathmandu
+                const marker = new google.maps.Marker({
+                    position: kathmandu,
+                    map: map,
+                    title: 'Kathmandu, Nepal',
+                    animation: google.maps.Animation.DROP
+                });
+
+                // Add an info window
+                const infoWindow = new google.maps.InfoWindow({
+                    content: '<div><h3>Kathmandu, Nepal</h3><p>The capital city of Nepal</p></div>'
+                });
+
+                // Open info window when marker is clicked
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+
+                // Open info window by default
+                infoWindow.open(map, marker);
+
+                results.innerHTML += '<li>Map created successfully!</li>';
+                results.innerHTML += '<li>Marker added successfully!</li>';
+                results.innerHTML += '<li>Info window added successfully!</li>';
+                results.innerHTML += '<li>All tests passed!</li>';
+            } catch (error) {
+                results.innerHTML += `<li style="color: red;">Error: ${error.message}</li>`;
+            }
+        }
+    </script>
+
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwjrCx-T4UlUDmXALumCOWkJv-B7m9yCE&callback=initMap" async defer></script>
+</body>
+</html>

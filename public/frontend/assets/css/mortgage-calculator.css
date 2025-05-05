@@ -1,0 +1,79 @@
+/* Mortgage Calculator Styles */
+.mortgage-results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-box {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-box h5 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.result-box h3 {
+    font-size: 24px;
+    color: #2dbe6c;
+    font-weight: 600;
+    margin: 0;
+}
+
+.result-details {
+    padding: 10px 0;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.detail-item span {
+    color: #666;
+}
+
+.detail-item strong {
+    font-weight: 600;
+    color: #333;
+}
+
+#reset-calculator {
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+#reset-calculator:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Hide the property price data element */
+#property-price {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .result-box h3 {
+        font-size: 20px;
+    }
+    
+    .detail-item {
+        font-size: 13px;
+    }
+}
