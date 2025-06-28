@@ -10,9 +10,10 @@
             </div>
             <div class="auto-container">
                 <div class="content-box clearfix">
-                    <h1> {{ $pbread->type_name }} Type Property </h1>
+                    <h1> {{ $pbread->type_name }} Properties ({{ $property->total() }} Found) </h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('all.categories') }}">Categories</a></li>
                         <li>{{ $pbread->type_name }} </li>
                     </ul>
                 </div>
@@ -196,12 +197,7 @@
 
                             </div>
                             <div class="pagination-wrapper">
-                                <ul class="pagination clearfix">
-                                    <li><a href="property-list.html" class="current">1</a></li>
-                                    <li><a href="property-list.html">2</a></li>
-                                    <li><a href="property-list.html">3</a></li>
-                                    <li><a href="property-list.html"><i class="fas fa-angle-right"></i></a></li>
-                                </ul>
+                                {{ $property->links('pagination::custom') }}
                             </div>
                         </div>
                     </div>

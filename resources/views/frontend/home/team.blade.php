@@ -5,12 +5,12 @@ $agents = App\\Models\\User::where('status','active')->where('role','agent')->or
  <section id="team-section" class="team-section sec-pad centred bg-color-1">
             <div class="pattern-layer" style="background-image: url({{ asset('frontend/assets/images/shape/shape-1.png') }});"></div>
             <div class="auto-container">
-                
-                <div class="sec-title">
+
+                <div class="sec-title" style="margin-bottom: 80px; position: relative; z-index: 5;">
                     <h5>Our Agents</h5>
                     <h2>Meet Our Excellent Agents</h2>
                 </div>
-                <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one" style="position: relative; z-index: 10; margin-top: 60px;">
                     
 
   @foreach($agents as $item)
@@ -25,9 +25,9 @@ $agents = App\\Models\\User::where('status','active')->where('role','agent')->or
                     <span class="designation">{{ $item->phone }}</span>
                     @endif
                     <ul class="social-links clearfix">
-                        <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                     </ul>
                 </div>
             </div>

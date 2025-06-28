@@ -130,7 +130,7 @@
                     <div class="buy-btn"><a href="#">For {{ $item->property_status }}</a></div>
                 </div>
                 <div class="title-box">
-                    <p>${{ number_format($item->lowest_price) }}</p>
+                    <p>NPR {{ number_format($item->lowest_price) }}</p>
                     <h6><a href="{{ url('property/details/'.$item->id.'/'.$item->property_slug) }}">{{ Str::limit($item->property_name, 20) }}</a></h6>
                 </div>
             </div>

@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <div class="container-fluid d-flex justify-content-between">
                         <div class="col-lg-3 ps-0">
-                            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Noble<span>UI</span></a>                 
+                            <a href="#" class="noble-ui-logo logo-light d-block mt-3">Noble<span>UI</span></a>
                             <p class="mt-1 mb-1"><b>NobleUI Themes</b></p>
                             <p>108,<br> Great Russell St,<br>London, WC1B 3NA.</p>
                             <h5 class="mt-5 mb-2 text-muted">Agent Info :</h5>
@@ -31,7 +31,7 @@
                             <h4 class="fw-bolder text-uppercase text-end mt-4 mb-2">Basic Plan</h4>
                             <h6 class="text-end mb-5 pb-4">Currently Active / Default Plan</h6>
                             <p class="text-end mb-1">Plan Cost</p>
-                            <h4 class="text-end fw-normal">$ 0</h4>
+                            <h4 class="text-end fw-normal">NPR 0</h4>
                         </div>
                         </div>
                         <div class="container-fluid mt-5 d-flex justify-content-center w-100">
@@ -54,8 +54,8 @@
                                     <td class="text-start">Basic</td>
                                     <td>1</td> {{-- Basic plan allows 1 property --}}
                                     <td>5</td> {{-- Basic plan adds 5 credits --}}
-                                    <td>$0</td>
-                                    <td>$0</td>
+                                    <td>NPR 0</td>
+                                    <td>NPR 0</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -77,4 +77,4 @@
     </div>
 </div>
 
-@endsection 
+@endsection

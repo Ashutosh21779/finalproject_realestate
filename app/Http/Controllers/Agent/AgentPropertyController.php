@@ -127,7 +127,7 @@ class AgentPropertyController extends Controller
             'created_at' => Carbon::now(),
 
         ]);
-        } // End Foreach
+        }
 
          /// End Multiple Image Upload From Here ////
 
@@ -160,7 +160,7 @@ class AgentPropertyController extends Controller
 
         return redirect()->route('agent.all.property')->with($notification);
 
-    }// End Method
+    }
 
 
  public function AgentEditProperty($id){

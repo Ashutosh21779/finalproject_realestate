@@ -278,7 +278,7 @@ $statusDataJson = json_encode($statusData);
                               <span class="badge bg-warning">Pending</span>
                             @endif
                           </td>
-                          <td>${{ number_format($property->lowest_price, 0) }}</td>
+                          <td>NPR {{ number_format($property->lowest_price, 0) }}</td>
                           <td>
                             <a href="{{ route('agent.edit.property', $property->id) }}" class="btn btn-sm btn-primary">Edit</a>
                           </td>

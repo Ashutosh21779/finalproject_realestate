@@ -10,12 +10,20 @@ use App\Models\Facility;
 use App\Models\Amenities;
 use App\Models\PropertyType; 
 use App\Models\User; 
-use App\Models\Wishlist; 
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Services\RecommendationService;
 
 class WishlistController extends Controller
 {
+    protected $recommendationService;
+
+    public function __construct(RecommendationService $recommendationService)
+    {
+        $this->recommendationService = $recommendationService;
+    }
+
     public function AddToWishList(Request $request, $property_id){
 
         if(Auth::check()){
@@ -28,6 +36,10 @@ class WishlistController extends Controller
                 'property_id' => $property_id,
                 'created_at' => Carbon::now()
                 ]);
+
+                // Clear recommendation cache when wishlist changes
+                $this->recommendationService->clearUserCache(Auth::id());
+
                 return response()->json(['success' => 'Successfully Added On Your Wishlist']);
             }else{
                 return response()->json(['error' => 'This Property Has Already in your WishList']);
@@ -65,9 +77,13 @@ class WishlistController extends Controller
     public function WishlistRemove($id){
 
       Wishlist::where('user_id',Auth::id())->where('id',$id)->delete();
+
+      // Clear recommendation cache when wishlist changes
+      $this->recommendationService->clearUserCache(Auth::id());
+
       return response()->json(['success' => 'Successfully Property Remove']);
 
-    }// End Method 
+    }// End Method
 
 
 

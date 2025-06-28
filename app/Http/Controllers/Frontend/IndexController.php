@@ -32,7 +32,6 @@ class IndexController extends Controller
         $multiImage = MultiImage::where('property_id',$id)->get();
         $facility = Facility::where('property_id',$id)->get();
 
-        // Track this property view
         $this->trackPropertyView($id);
 
         // Get suggested properties based on state and user history
@@ -50,7 +49,7 @@ class IndexController extends Controller
             if (is_numeric($propertyState)) {
                 $stateObj = State::find($propertyState);
             } else {
-                // Try to find by name
+                // name bhetni
                 $stateObj = State::where('state_name', $propertyState)->first();
             }
 
@@ -60,7 +59,7 @@ class IndexController extends Controller
                            ->where('status', '1')
                            ->whereNotIn('id', $suggestedProperties->pluck('id')->toArray());
 
-            // Add state condition if we have a state object
+        
             if ($stateObj) {
                 $query->where(function($q) use ($stateObj) {
                     $q->where('state', $stateObj->id)
@@ -72,7 +71,7 @@ class IndexController extends Controller
                                      ->limit(3 - $suggestedProperties->count())
                                      ->get();
 
-            // Merge the collections
+          
             $suggestedProperties = $suggestedProperties->concat($similarProperties);
         }
 
@@ -90,9 +89,7 @@ class IndexController extends Controller
 
     }// End Method
 
-    /**
-     * Track user's property view
-     */
+    
     private function trackPropertyView($propertyId)
     {
         // Get current user ID if logged in
@@ -131,9 +128,7 @@ class IndexController extends Controller
         }
     }
 
-    /**
-     * Get suggested properties based on user behavior and property attributes
-     */
+    
     private function getSuggestedProperties($currentProperty)
     {
         // Start with an empty collection
@@ -410,7 +405,7 @@ class IndexController extends Controller
 
     public function PropertyType($id){
 
-        $property = Property::where('status','1')->where('ptype_id',$id)->get();
+        $property = Property::where('status','1')->where('ptype_id',$id)->paginate(6);
 
         $pbread = PropertyType::where('id',$id)->first();
 
@@ -780,8 +775,8 @@ class IndexController extends Controller
 
 
     public function AllCategories(){
-        $categories = PropertyType::orderBy('type_name','ASC')->get();
-        return view('frontend.categories.all_categories', compact('categories'));
+        $propertyTypes = PropertyType::orderBy('type_name','ASC')->get();
+        return view('frontend.property.all_property_types', compact('propertyTypes'));
     }// End Method
 
 }

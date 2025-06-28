@@ -574,7 +574,7 @@
                     <div class="title">
                         <h4>Suggested For You
                         @if(Auth::check())
-                            <span class="personalized-indicator">Personalized</span>
+                            <!-- <span class="personalized-indicator">Personalized</span> -->
                         @endif
                         </h4>
                         <p class="text-muted">

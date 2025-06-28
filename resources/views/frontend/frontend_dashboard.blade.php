@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 <title>@yield('title') </title>
- @vite(['resources/js/app.js'])
 
 <!-- Fav Icon -->
 <link rel="icon" href="{{ asset('frontend/assets/images/favicon.ico') }}" type="image/x-icon">
@@ -219,7 +218,7 @@
                 <div class="price-box clearfix">
                     <div class="price-info pull-left">
                         <h6>Start From</h6>
-                        <h4>$${value.property.lowest_price}</h4>
+                        <h4>NPR ${value.property.lowest_price}</h4>
                     </div>
 
                 </div>
@@ -367,7 +366,7 @@
                 <th>
                     <figure class="image-box"><img src="/${value.property.property_thambnail}" alt=""></figure>
                     <div class="title">${value.property.property_name}</div>
-                    <div class="price">$${value.property.lowest_price}</div>
+                    <div class="price">NPR ${value.property.lowest_price}</div>
                 </th>
 
 

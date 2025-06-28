@@ -107,11 +107,11 @@
                             @endif
 
                             @if(isset($min_price) && !empty($min_price))
-                                <span class="badge bg-info text-white p-2 me-2">Min Price: ${{ number_format($min_price) }}</span>
+                                <span class="badge bg-info text-white p-2 me-2">Min Price: NPR {{ number_format($min_price) }}</span>
                             @endif
 
                             @if(isset($max_price) && !empty($max_price))
-                                <span class="badge bg-info text-white p-2 me-2">Max Price: ${{ number_format($max_price) }}</span>
+                                <span class="badge bg-info text-white p-2 me-2">Max Price: NPR {{ number_format($max_price) }}</span>
                             @endif
 
                             <a href="{{ url('/properties') }}" class="btn btn-sm btn-danger">Clear All</a>

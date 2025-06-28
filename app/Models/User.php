@@ -45,7 +45,23 @@ class User extends Authenticatable
     public static function getpermissionGroups(){
         $permission_groups = DB::table('permissions')->select('group_name')->groupBy('group_name')->get();
         return $permission_groups;
-    } // End Method 
+    } // End Method
+
+    /**
+     * Get user's wishlist items
+     */
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    /**
+     * Get user's property views
+     */
+    public function propertyViews()
+    {
+        return $this->hasMany(UserPropertyView::class);
+    }
 
 
     public static function getpermissionByGroupName($group_name){

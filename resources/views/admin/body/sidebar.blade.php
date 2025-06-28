@@ -8,7 +8,7 @@
           <span></span>
           <span></span>
         </div>
-      </div> 
+      </div>
       <div class="sidebar-body">
         <ul class="nav">
           <li class="nav-item nav-category">Main</li>
@@ -19,7 +19,7 @@
             </a>
           </li>
           <li class="nav-item nav-category">RealEstate</li>
-         
+
           @if(Auth::user()->can('type.menu'))
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
@@ -29,7 +29,7 @@
             </a>
             <div class="collapse" id="emails">
               <ul class="nav sub-menu">
-               
+
                @if(Auth::user()->can('all.type'))
                 <li class="nav-item">
                   <a href="{{ route('all.type') }}" class="nav-link">All Type</a>
@@ -40,7 +40,7 @@
                   <a href="{{ route('add.type') }}" class="nav-link">Add Type</a>
                 </li>
                 @endif
-                
+
               </ul>
             </div>
           </li>
@@ -85,7 +85,7 @@
                 <li class="nav-item">
                   <a href="{{ route('add.amenitie') }}" class="nav-link">Add Amenitie</a>
                 </li>
-                
+
               </ul>
             </div>
           </li>
@@ -105,11 +105,11 @@
                 <li class="nav-item">
                   <a href="{{ route('add.property') }}" class="nav-link">Add Property</a>
                 </li>
-                
+
               </ul>
             </div>
           </li>
-          
+
           <li class="nav-item">
             <a href="{{ route('admin.package.history') }}" class="nav-link">
               <i class="link-icon" data-feather="calendar"></i>
@@ -139,7 +139,7 @@
                 <li class="nav-item">
                   <a href="{{ route('add.testimonials') }}" class="nav-link">Add Testimonials</a>
                 </li>
-                
+
               </ul>
             </div>
           </li>
@@ -148,7 +148,7 @@
 
 
           <li class="nav-item nav-category">User All Function</li>
-          
+
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
@@ -164,7 +164,7 @@
                 <li class="nav-item">
                   <a href="pages/ui-components/alerts.html" class="nav-link">Add Agent</a>
                 </li>
-                
+
               </ul>
             </div>
           </li>
@@ -182,8 +182,8 @@
                 <li class="nav-item">
                   <a href="{{ route('all.blog.category') }}" class="nav-link">All Blog Category </a>
                 </li>
-                
-                
+
+
               </ul>
             </div>
           </li>
@@ -204,8 +204,8 @@
                 <li class="nav-item">
                   <a href="{{ route('add.post') }}" class="nav-link">Add Post </a>
                 </li>
-                
-                
+
+
               </ul>
             </div>
           </li>
@@ -217,12 +217,12 @@
             </a>
           </li>
 
-           <li class="nav-item">
+           {{-- <li class="nav-item">
             <a href="{{ route('smtp.setting') }}" class="nav-link">
               <i class="link-icon" data-feather="calendar"></i>
               <span class="link-title">SMTP Setting </span>
             </a>
-          </li>
+          </li> --}}
 
           <li class="nav-item">
             <a href="{{ route('site.setting') }}" class="nav-link">
@@ -255,7 +255,7 @@
                 <li class="nav-item">
                   <a href="{{ route('all.roles.permission') }}" class="nav-link">All Role in Permission </a>
                 </li>
-                
+
               </ul>
             </div>
           </li>
@@ -274,17 +274,17 @@
                 </li>
                 <li class="nav-item">
                   <a href="{{ route('add.admin') }}" class="nav-link">Add Admin </a>
-                </li> 
+                </li>
               </ul>
             </div>
           </li>
-          
 
 
-           
-          
-        
-          
+
+
+
+
+
           <li class="nav-item nav-category">Docs</li>
           <li class="nav-item">
             <a href="#" target="_blank" class="nav-link">

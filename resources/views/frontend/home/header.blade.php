@@ -15,8 +15,12 @@
                     </div>
                     <div class="right-column pull-right">
     <ul class="social-links clearfix">
-        <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
+        @if($setting && $setting->facebook)
+            <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+        @endif
+        @if($setting && $setting->twitter)
+            <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
+        @endif
         <li><a href="index.html"><i class="fab fa-pinterest-p"></i></a></li>
         <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
         <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
@@ -54,7 +58,7 @@
 <div class="outer-box">
 <div class="main-box">
 <div class="logo-box">
-    <figure class="logo"><a href="{{ url('/') }}"><img src="{{ asset($setting->logo) }}" alt=""></a></figure>
+    <figure class="logo"><a href="{{ url('/') }}"><img src="{{ asset($setting && $setting->logo ? $setting->logo : 'frontend/assets/images/logo.png') }}" alt=""></a></figure>
 </div>
 <div class="menu-area clearfix">
     <!--Mobile Navigation Toggler-->
@@ -105,7 +109,7 @@
                 <div class="outer-box">
                     <div class="main-box">
                         <div class="logo-box">
-    <figure class="logo"><a href="{{ url('/') }}"><img src="{{ asset($setting->logo) }}" alt=""></a></figure>
+    <figure class="logo"><a href="{{ url('/') }}"><img src="{{ asset($setting && $setting->logo ? $setting->logo : 'frontend/assets/images/logo.png') }}" alt=""></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">

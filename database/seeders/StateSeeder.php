@@ -16,32 +16,44 @@ class StateSeeder extends Seeder
     {
         DB::table('states')->insert([
             [
-                'state_name' => 'Alabama',
-                'state_image' => 'upload/state/alabama.jpg', // Example path, adjust if needed
+                'state_name' => 'Kathmandu',
+                'state_image' => 'upload/state/kathmandu.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
              [
-                'state_name' => 'Arizona',
-                'state_image' => 'upload/state/arizona.jpg', // Example path, adjust if needed
+                'state_name' => 'Pokhara',
+                'state_image' => 'upload/state/pokhara.jpg',
                  'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
              [
-                'state_name' => 'California',
-                'state_image' => 'upload/state/california.jpg', // Example path, adjust if needed
+                'state_name' => 'Lalitpur',
+                'state_image' => 'upload/state/lalitpur.jpg',
                  'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
              [
-                'state_name' => 'Florida',
-                'state_image' => 'upload/state/florida.jpg', // Example path, adjust if needed
+                'state_name' => 'Bhaktapur',
+                'state_image' => 'upload/state/bhaktapur.jpg',
                  'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
              [
-                'state_name' => 'New York',
-                'state_image' => 'upload/state/newyork.jpg', // Example path, adjust if needed
+                'state_name' => 'Chitwan',
+                'state_image' => 'upload/state/chitwan.jpg',
+                 'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+             [
+                'state_name' => 'Butwal',
+                'state_image' => 'upload/state/butwal.jpg',
+                 'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+             [
+                'state_name' => 'Biratnagar',
+                'state_image' => 'upload/state/biratnagar.jpg',
                  'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

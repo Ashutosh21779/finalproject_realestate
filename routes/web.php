@@ -83,6 +83,14 @@ Route::controller(WishlistController::class)->group(function(){
 
 });
 
+ // User Recommendation Routes
+Route::controller(\App\Http\Controllers\Frontend\RecommendationController::class)->middleware('auth')->group(function(){
+     Route::get('/api/recommendations', 'getRecommendations')->name('api.recommendations');
+     Route::post('/api/recommendations/clear-cache', 'clearCache')->name('api.recommendations.clear-cache');
+     Route::get('/api/recommendations/stats', 'getStats')->name('api.recommendations.stats');
+     Route::get('/api/recommendations/debug-collaborative', 'debugCollaborative')->name('api.recommendations.debug-collaborative');
+});
+
 
  // User Compare All Route
 Route::controller(CompareController::class)->group(function(){

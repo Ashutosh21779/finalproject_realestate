@@ -265,7 +265,7 @@ $agentDataJson = json_encode([$activeAgentsValue, $inactiveAgentsValue]);
                               <span class="badge bg-warning">Pending</span>
                             @endif
                           </td>
-                          <td>${{ number_format($property->lowest_price, 0) }}</td>
+                          <td>NPR {{ number_format($property->lowest_price, 0) }}</td>
                           <td>{{ $property->user ? $property->user->name : 'N/A' }}</td>
                         </tr>
                         @endforeach

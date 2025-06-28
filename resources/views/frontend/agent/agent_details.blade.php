@@ -7,12 +7,13 @@
             <div class="pattern-layer">
                 <div class="pattern-1" style="background-image: url({{ asset('frontend/assets/images/shape/shape-9.png') }});"></div>
                 <div class="pattern-2" style="background-image: url({{ asset('frontend/assets/images/shape/shape-10.png') }});"></div>
-            </div> 
+            </div>
             <div class="auto-container">
                 <div class="content-box clearfix">
                     <h1>{{ $agent->name }}</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('all.agents') }}">Agents</a></li>
                         <li>{{ $agent->name }}</li>
                     </ul>
                 </div>
@@ -22,7 +23,7 @@
 
 
         <!-- agent-details -->
-        <section class="agent-details">
+        <section class="agent-details" style="position: relative; z-index: 10; background: #fff; padding: 60px 0;">
             <div class="auto-container">
                 <div class="agent-details-content">
                     <div class="agents-block-one">
@@ -67,8 +68,8 @@
 <h3>Listing By {{ $agent->name }}</h3>
 </div>
 <div class="item-shorting clearfix">
- 
- 
+
+
 </div>
 
 
@@ -90,7 +91,7 @@
                        @else
                         <span class="category">New</span>
                        @endif
-                       
+
 
                         <div class="buy-btn"><a href="property-details.html">For {{ $item->property_status }}</a></div>
                     </div>
@@ -99,26 +100,26 @@
                         <div class="price-box clearfix">
                             <div class="price-info pull-left">
                                 <h6>Start From</h6>
-                                <h4>${{ $item->lowest_price }}</h4>
+                                <h4>NPR {{ $item->lowest_price }}</h4>
                             </div>
-   
+
   @if($item->agent_id == Null)
 <div class="author-box pull-right">
-        <figure class="author-thumb"> 
+        <figure class="author-thumb">
             <img src="{{ url('upload/ariyan.jpg') }}" alt="">
             <span>Admin</span>
         </figure>
     </div>
-  @else 
+  @else
 
    <div class="author-box pull-right">
-        <figure class="author-thumb"> 
+        <figure class="author-thumb">
             <img src="{{ (!empty($item->user->photo)) ? url('upload/agent_images/'.$item->user->photo) : url('upload/no_image.jpg') }}" alt="">
             <span>{{ $item->user->name }}</span>
         </figure>
     </div>
 
-  @endif 
+  @endif
                         </div>
                         <p>{{ $item->short_descp }}</p>
                         <ul class="more-details clearfix">
@@ -130,7 +131,7 @@
                             <div class="btn-box pull-left"><a href="{{ url('property/details/'.$item->id.'/'.$item->property_slug) }}" class="theme-btn btn-two">See Details</a></div>
                             <ul class="other-option pull-right clearfix">
              <li><a aria-label="Compare" class="action-btn" id="{{ $item->id }}" onclick="addToCompare(this.id)"><i class="icon-12"></i></a></li>
-       
+
         <li><a aria-label="Add To Wishlist" class="action-btn" id="{{ $item->id }}" onclick="addToWishList(this.id)" ><i class="icon-13"></i></a></li>
                             </ul>
                         </div>
@@ -138,13 +139,13 @@
                 </div>
             </div>
             @endforeach
-          
+
         </div>
-       
+
     </div>
 </div>
- 
- 
+
+
 </div>
 </div>
 </div>
@@ -168,7 +169,7 @@
 @endphp
 
  <form action="{{ route('agent.details.message') }}" method="post" class="default-form">
-    @csrf  
+    @csrf
 
       <input type="hidden" name="agent_id" value="{{ $agent->id }}">
 
@@ -192,10 +193,10 @@
 @else
 
 <form action="{{ route('agent.details.message') }}" method="post" class="default-form">
-    @csrf  
+    @csrf
 
     <input type="hidden" name="agent_id" value="{{ $agent->id }}">
-   
+
 
             <div class="form-group">
                 <input type="text" name="msg_name" placeholder="Your name" required="">
@@ -215,7 +216,7 @@
         </form>
 
 @endauth
- 
+
 
 
     </div>
@@ -253,7 +254,7 @@
                 <div class="price-box clearfix">
                     <div class="price-info">
                         <h6>Start From</h6>
-                        <h4>${{ $feat->lowest_price }}</h4>
+                        <h4>NPR {{ $feat->lowest_price }}</h4>
                     </div>
                 </div>
                 <p>{{ $feat->short_descp }}</p>
@@ -261,11 +262,11 @@
             </div>
         </div>
     </div>
-@endforeach 
+@endforeach
 
 
-     
- 
+
+
                                 </div>
                             </div>
                         </div>
