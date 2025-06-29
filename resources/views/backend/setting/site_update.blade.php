@@ -20,42 +20,42 @@
   <form id="myForm" method="POST" action="{{ route('update.site.setting') }}" class="forms-sample" enctype="multipart/form-data">
 				@csrf
                 
-  <input type="hidden" name="id" value="{{ $sitesetting->id }}">
+  <input type="hidden" name="id" value="{{ $sitesetting->id ?? 1 }}">
 
 				<div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">support_phone   </label>
-	  <input type="text" name="support_phone" class="form-control" value="{{ $sitesetting->support_phone }}" > 
+	  <input type="text" name="support_phone" class="form-control" value="{{ $sitesetting->support_phone ?? '' }}" >
 				</div>
 
                         <div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">company_address   </label>
-      <input type="text" name="company_address" class="form-control" value="{{ $sitesetting->company_address }}" > 
+      <input type="text" name="company_address" class="form-control" value="{{ $sitesetting->company_address ?? '' }}" >
                 </div>
 
 
                         <div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">    email   </label>
-      <input type="email" name="email" class="form-control" value="{{ $sitesetting->email }}" > 
+      <input type="email" name="email" class="form-control" value="{{ $sitesetting->email ?? '' }}" >
                 </div>
 
 
 
                         <div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">facebook   </label>
-      <input type="text" name="facebook" class="form-control" value="{{ $sitesetting->facebook }}" > 
+      <input type="text" name="facebook" class="form-control" value="{{ $sitesetting->facebook ?? '' }}" >
                 </div>
 
 
 
                         <div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">twitter   </label>
-      <input type="text" name="twitter" class="form-control" value="{{ $sitesetting->twitter }}" > 
+      <input type="text" name="twitter" class="form-control" value="{{ $sitesetting->twitter ?? '' }}" >
                 </div>
 
 
                         <div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label"> copyright   </label>
-      <input type="text" name="copyright" class="form-control" value="{{ $sitesetting->copyright }}" > 
+      <input type="text" name="copyright" class="form-control" value="{{ $sitesetting->copyright ?? '' }}" >
                 </div>
 
 
@@ -66,7 +66,7 @@
 
     <div class="mb-3">
  <label for="exampleInputEmail1" class="form-label">    </label>
-    <img id="showImage" class="wd-80 rounded-circle" src="{{ asset($sitesetting->logo) }}" alt="profile">
+    <img id="showImage" class="wd-80 rounded-circle" src="{{ asset($sitesetting->logo ?? 'frontend/assets/images/logo.png') }}" alt="profile">
                 </div>
 
 			 

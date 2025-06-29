@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealShed Chatbot Test</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="frontend/assets/css/chatbot.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-status {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #2D3954;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-status" id="test-status">Loading...</div>
+    
+    <div class="test-container">
+        <h1>RealShed Chatbot Test Page</h1>
+        <p>This is a test page to verify the chatbot functionality.</p>
+        <p>The chatbot should appear as a floating bubble in the bottom-right corner.</p>
+        
+        <h2>Test Instructions:</h2>
+        <ol>
+            <li>Look for the chat bubble in the bottom-right corner</li>
+            <li>Click the bubble to open the chat widget</li>
+            <li>Try typing a message like "help" or "properties"</li>
+            <li>Verify the chatbot responds appropriately</li>
+        </ol>
+        
+        <h2>Expected Features:</h2>
+        <ul>
+            <li>Floating chat bubble with RealShed colors (#2D3954 and #43C4E3)</li>
+            <li>Chat widget that opens/closes</li>
+            <li>Welcome message on first open</li>
+            <li>Keyword-based responses</li>
+            <li>Responsive design</li>
+        </ul>
+    </div>
+
+    <script>
+        // Test status indicator
+        document.getElementById('test-status').textContent = 'DOM Loaded';
+        
+        // Check if chatbot loads
+        setTimeout(() => {
+            const chatBubble = document.getElementById('chat-bubble');
+            const status = document.getElementById('test-status');
+            
+            if (chatBubble) {
+                status.textContent = 'Chatbot Found!';
+                status.style.background = 'green';
+            } else {
+                status.textContent = 'Chatbot NOT Found';
+                status.style.background = 'red';
+            }
+        }, 2000);
+    </script>
+    
+    <script src="frontend/assets/js/chatbot-minimal.js"></script>
+</body>
+</html>

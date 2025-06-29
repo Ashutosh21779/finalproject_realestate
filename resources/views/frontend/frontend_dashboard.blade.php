@@ -29,6 +29,7 @@
 <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
 <link href="{{ asset('frontend/assets/css/mortgage-calculator.css') }}" rel="stylesheet">
+<link href="{{ asset('frontend/assets/css/chatbot.css') }}" rel="stylesheet">
 
  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
@@ -100,6 +101,9 @@
 
     <!-- property filter js -->
     <script src="{{ asset('frontend/assets/js/property-filter.js') }}"></script>
+
+    <!-- chatbot js -->
+    <script src="{{ asset('frontend/assets/js/chatbot-working.js') }}"></script>
 
     @stack('scripts')
 

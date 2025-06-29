@@ -12046,7 +12046,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before{
-  animation: letters-loading 4s infinite;
+  animation: letters-loading 1.5s infinite;
   content: attr(data-text-preloader);
   left: 0;
   opacity: 0;
@@ -12082,7 +12082,7 @@ h1,h2,h3,h4,h5,h6{
 
 .preloader .loaded .animation-preloader {
   opacity: 0;
-  transition: 0.3s ease-out;
+  transition: 0.15s ease-out;
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading{

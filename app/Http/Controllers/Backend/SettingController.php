@@ -49,10 +49,25 @@ class SettingController extends Controller
 
     public function SiteSetting(){
 
-         $sitesetting = SiteSetting::find(1);
+        $sitesetting = SiteSetting::find(1);
+
+        // If no site setting exists, create a default one
+        if (!$sitesetting) {
+            $sitesetting = SiteSetting::create([
+                'id' => 1,
+                'support_phone' => '+977-9876543210',
+                'company_address' => 'Kathmandu, Nepal',
+                'email' => 'info@propnepal.com',
+                'facebook' => 'https://facebook.com/propnepal',
+                'twitter' => 'https://twitter.com/propnepal',
+                'copyright' => '© 2025 PropNepal. All rights reserved.',
+                'logo' => 'frontend/assets/images/logo.png'
+            ]);
+        }
+
         return view('backend.setting.site_update',compact('sitesetting'));
 
-    }// End Method 
+    }// End Method
 
     public function UpdateSiteSetting(Request $request){
 
